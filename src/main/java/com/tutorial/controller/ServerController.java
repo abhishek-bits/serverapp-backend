@@ -94,8 +94,8 @@ public class ServerController {
     @GetMapping(path = "/image/{fileName}", produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] getServerImage(@PathVariable("fileName") String fileName) throws IOException {
         return Files.readAllBytes(Paths.get(
-                "D:\\IntelliJ Projects\\full-stack-tutorial\\src\\main\\resources\\images\\"
-//                System.getProperty("INTELLIJ_PROJECT_DIR") // comes from IntelliJ Path Variables.
-                        + fileName));
+        		System.getProperty("user.dir") 
+        		+ "\\src\\main\\resources\\images\\"
+        		+ fileName));
     }
 }
